@@ -21,7 +21,7 @@
 
 from gnuradio import gr, gr_unittest
 from gnuradio import blocks
-from demod import demod
+from .demod import demod
 
 class qa_demod (gr_unittest.TestCase):
 

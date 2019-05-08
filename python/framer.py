@@ -44,7 +44,7 @@ class framer(gr.sync_block):
         # required fs is 2 Msps
         self.sps = fs/SYMBOL_RATE
         if (self.sps - np.floor(self.sps)) > 0:
-            print 'Warning: ADS-B Framer is designed to operate on an integer number of samples per symbol'
+            print('Warning: ADS-B Framer is designed to operate on an integer number of samples per symbol')
         self.sps = int(self.sps) # Set the samples/symbol to an integer
 
         self.threshold = threshold
@@ -111,7 +111,7 @@ class framer(gr.sync_block):
                 if len(in0_rise_edge_idxs) - len(in0_fall_edge_idxs) == 1:
                     in0_rise_edge_idxs = np.delete(in0_rise_edge_idxs, len(in0_rise_edge_idxs) - 1)
                 else:
-                    print 'Oh no, this shouldn\'t be happening...'
+                    print('Oh no, this shouldn\'t be happening...')
 
             # Find the index of the center of each pulses
             pulse_idxs = np.mean((in0_fall_edge_idxs,in0_rise_edge_idxs), axis=0).astype(int)

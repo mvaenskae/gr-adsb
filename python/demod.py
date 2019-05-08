@@ -41,7 +41,7 @@ class demod(gr.sync_block):
         # required fs is 2 Msps
         self.sps = fs/SYMBOL_RATE
         if (self.sps - np.floor(self.sps)) > 0:
-            print 'Warning: ADS-B Demodulator is designed to operate on an integer number of samples per symbol'
+            print('Warning: ADS-B Demodulator is designed to operate on an integer number of samples per symbol')
         self.sps = int(self.sps) # Set the samples/symbol to an integer
 
         # Array of data bits

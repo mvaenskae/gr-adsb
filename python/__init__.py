@@ -26,12 +26,13 @@ description here (python/__init__.py).
 # import swig generated symbols into the ADSB namespace
 try:
 	# this might fail if the module is python-only
-	from ADSB_swig import *
-except ImportError:
+	from adsb_swig import *
+except ImportError as ie:
+	print(ie)
 	pass
 
 # import any pure python here
-from framer import framer
-from decoder import decoder
-from demod import demod
+from .framer import framer
+from .decoder import decoder
+from .demod import demod
 #

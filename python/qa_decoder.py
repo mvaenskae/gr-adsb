@@ -21,7 +21,7 @@
 
 from gnuradio import gr, gr_unittest
 from gnuradio import blocks
-from decoder import decoder
+from .decoder import decoder
 
 class qa_decoder (gr_unittest.TestCase):
 

@@ -21,7 +21,7 @@
 
 from gnuradio import gr, gr_unittest
 from gnuradio import blocks
-from framer import framer
+from .framer import framer
 
 class qa_framer (gr_unittest.TestCase):
 

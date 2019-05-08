@@ -62,7 +62,7 @@ function(GR_ADD_TEST test_name)
         endforeach(pydir)
     endif(WIN32)
 
-    file(TO_NATIVE_PATH ${CMAKE_CURRENT_SOURCE_DIR} srcdir)
+    file(TO_NATIVE_PATH Modules srcdir)
     file(TO_NATIVE_PATH "${GR_TEST_LIBRARY_DIRS}" libpath) #ok to use on dir list?
     file(TO_NATIVE_PATH "${GR_TEST_PYTHON_DIRS}" pypath) #ok to use on dir list?
 
