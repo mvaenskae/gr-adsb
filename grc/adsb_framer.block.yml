@@ -8,23 +8,23 @@ templates:
   callbacks: set_threshold(${threshold})
 
 parameters:
-  - id: fs
-    label: 'Sample Rate'
-    dtype: float
-    default: 2e6
-  - id: threshold
-    label: 'Detection Threshold'
-    dtype: float
-    default: 0.01
+- id: fs
+  label: 'Sample Rate'
+  dtype: float
+  default: 2e6
+- id: threshold
+  label: 'Detection Threshold'
+  dtype: float
+  default: 0.01
 
 inputs:
-  - label: 'in'
-    domain: stream
-    dtype: float
+- label: 'in'
+  domain: stream
+  dtype: float
 
 outputs:
-  - label: 'out'
-    domain: stream
-    dtype: float
+- label: 'out'
+  domain: stream
+  dtype: float
 
 file_format: 1
