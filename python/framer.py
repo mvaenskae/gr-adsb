@@ -138,7 +138,7 @@ class framer(gr.sync_block):
 
                     # Starting at the center of the discovered pulse, find the amplitudes of each 
                     # half symbol and then compare it to the preamble half symbols
-                    amps = in0[pulse_idx:(pulse_idx + NUM_PREAMBLE_BITS*self.sps):(self.sps/2)]
+                    amps = in0[pulse_idx:int(pulse_idx + NUM_PREAMBLE_BITS*self.sps):int(self.sps/2)]
 
                     # Set a pulse to 1 if it's greater than 1/2 the amplitude of the detected pulse
                     pulses = np.zeros(NUM_PREAMBLE_PULSES, dtype=int)

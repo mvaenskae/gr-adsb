@@ -42,7 +42,7 @@ class demod(gr.sync_block):
         self.sps = fs/SYMBOL_RATE
         if (self.sps - np.floor(self.sps)) > 0:
             print('Warning: ADS-B Demodulator is designed to operate on an integer number of samples per symbol')
-        self.sps = int(self.sps) # Set the samples/symbol to an integer
+        self.sps = int(self.sps)  # Set the samples/symbol to an integer
 
         # Array of data bits
         self.bits = []
@@ -90,7 +90,7 @@ class demod(gr.sync_block):
                 bit1_amps = in0[bit1_idxs]
 
                 # Grab the amplitudes where the 'bit 0 pulse' should be
-                bit0_idxs = range(sob_idx + self.sps/2, sob_idx + self.sps*MAX_NUM_BITS + self.sps/2, self.sps)
+                bit0_idxs = range(int(sob_idx + self.sps//2), int(sob_idx + self.sps*MAX_NUM_BITS + self.sps//2), self.sps)
                 bit0_amps = in0[bit0_idxs]
 
                 self.bits = np.zeros(MAX_NUM_BITS, dtype=np.uint8)
